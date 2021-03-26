@@ -1,0 +1,88 @@
+#include <stdio.h>
+#include <ctype.h>
+
+void isCharacter(int previous, int c, int counter)
+{
+while((c = getchar()))
+{
+	if(previous == c)
+	{
+		if(counter < 10)
+		{
+			counter++;
+		}
+		else
+		{
+			putchar('9');
+			counter = 0;
+			putchar(previous);
+		}	
+	}
+	else if(previous == EOF)
+	{
+			//putchar(previous);
+			//counter++;
+	}
+	else if(counter == 0)
+	{
+		if(isdigit(previous))
+		{
+			putchar('0');
+			putchar(previous);
+		}
+		else
+		{
+			putchar(previous);
+		}
+		counter = 0;
+	}
+	else if(counter == 1)
+	{
+		putchar(previous);
+		putchar(previous);
+		counter = 0;
+	}
+	else if(counter == 10)
+	{
+		putchar('9');
+		putchar(previous);
+		putchar(previous);
+		counter = 0;	
+	}
+	else if(counter > 10)
+	{
+		putchar(counter+1+'0');
+		putchar(previous);
+		counter = 0;
+	}
+	else
+	{
+		putchar(counter+'0');
+		putchar(previous);
+		counter = 0;
+	}
+		previous = c;
+	if(c == EOF)
+	{
+		break;
+	}
+	}
+}
+
+void Encode()
+{
+	int c;
+	int counter = 0;
+	int hasCounterOverflowed = 0;
+	int previous = EOF;
+	isCharacter(previous, c, counter);
+	
+	
+}
+
+int main()
+{
+	//EncodeFile(stuff, arrayLength);
+	Encode();
+	return 0;
+}
