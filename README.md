@@ -12,3 +12,5 @@ Assignment 4 - String manipulation - Arrays and malloc - Lol I used a static cha
 Assignment 5 - Arrays but indices are strings, starting at 'a' - Arrays with more malloc and pointers 
 
 Assignment 6 - Multiple cursors at different positions in text - Doubly Linked List
+
+Assignment 7 - Cracking password hashes with known salts - Learnt hash maps, hash algo's and Makefile
